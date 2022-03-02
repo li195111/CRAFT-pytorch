@@ -4,3 +4,6 @@
 *.pth
 result*
 weights*
+data*
+.vscode*
+.DS_Store
