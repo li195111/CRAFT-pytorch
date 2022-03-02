@@ -80,6 +80,13 @@ class CRAFT(nn.Module):
         return y.permute(0,2,3,1), feature
 
 if __name__ == '__main__':
-    model = CRAFT(pretrained=True).cuda()
-    output, _ = model(torch.randn(1, 3, 768, 768).cuda())
-    print(output.shape)
+    import time
+    model = CRAFT(pretrained=True)
+    inp = torch.randn(1, 3, 768, 768)
+    if torch.cuda.is_available():
+        model = model.cuda()
+        inp = inp.cuda()
+    st = time.time()
+    output, _ = model(inp)
+    et = time.time()
+    print(f"{output.shape} Time Cost: {et-st:.3f} sec")
