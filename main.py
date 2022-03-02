@@ -37,7 +37,7 @@ if __name__ == '__main__':
                         'mag_ratio':1.5,
                         'poly':False,
                         'show_time':False,
-                        'test_folder':'/data/',
+                        'test_folder':'data',
                         'refine':False,
                         'refiner_model':'weights/craft_refiner_CTW1500.pth',
                         })
